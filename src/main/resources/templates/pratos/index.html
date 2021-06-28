@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/padrao/layout">
+<head>
+    <title>Lista de Pratos</title>
+</head>
+
+<div class="container-fluid px-4" layout:fragment="content">
+
+    <nav aria-label="breadcrumb" class="pt-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Pratos</li>
+        </ol>
+    </nav>
+
+    <h1>Lista de Pratos</h1>
+
+    <table id="tabela-pratos">
+        <thead>
+            <tr>
+                <th th:text="Preview"></th>
+                <th th:text="Nome"></th>
+                <th th:text="Categoria"></th>
+                <th th:text="Area"></th>
+                <th th:text="Tags"></th>
+                <th th:text="Instruções"></th>
+                <th th:text="Ações"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="prato : ${pratos}">
+                <td><img th:src="${prato.strMealThumb} + '/preview'" class="img-thumbnail thumb-prato" alt="" /></td>
+                <td th:text="${prato.strMeal}"></td>
+                <td><span class='badge bg-primary' th:text="${prato.strCategory}"></span></td>
+                <td th:text="${prato.strArea}"></td>
+                <td th:text="${prato.strTags}"></td>
+                <td>
+                    <span class="d-inline-block text-truncate" style="max-width: 500px;" th:text="${prato.strInstructions}"></span>
+                </td>
+                <td>
+                    <a role="button" class="btn btn-sm btn-outline-primary" title="Visualizar" th:href="@{'/pratos/' + ${prato.idMeal}}">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- CSS (incorporado ao layout) -->
+    <th:block layout:fragment="estilos">
+        <link rel="stylesheet" th:href="@{/vendor/bootstrap-table-1.18.3/bootstrap-table.min.css}" />
+        <link rel="stylesheet" th:href="@{/css/lista-pratos.css}" />
+    </th:block>
+
+    <!-- Javascript (incorporado ao layout) -->
+    <th:block layout:fragment="scripts">
+        <script th:src="@{/vendor/bootstrap-table-1.18.3/bootstrap-table.min.js}"></script>
+        <script th:src="@{/vendor/bootstrap-table-1.18.3/locale/bootstrap-table-pt-BR.min.js}"></script>
+        <script>
+        $('#tabela-pratos').bootstrapTable({
+            pagination: true,
+            search: true
+        });
+        </script>
+    </th:block>
+
+</div>

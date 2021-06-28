@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/padrao/layout">
+<head>
+    <title>Visualizar Prato</title>
+</head>
+
+<div class="container-fluid px-4" layout:fragment="content">
+
+    <nav aria-label="breadcrumb" class="pt-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+            <li class="breadcrumb-item"><a th:href="@{'/pratos/'}">Pratos</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Visualizar</li>
+        </ol>
+    </nav>
+
+    <h1>Ver Prato</h1>
+
+    <div class="row">
+
+        <!-- Coluna Esquerda -->
+        <div class="col-3">
+            <img th:src="${prato.strMealThumb}" class="img-thumbnail" alt="" />
+        </div>
+
+        <!-- Coluna Direita -->
+        <div class="col">
+
+            <div class="card">
+                <div class="card-header">
+                    <h4 th:text=" ${prato.strMeal}" />
+                </div>
+                <div class="card-body">
+
+                    <p>
+                        <b>Opção de Bebida</b>: 
+                        <span th:text="${prato.strDrinkAlternate} ?: '-'" />
+                    </p>
+                    <p>
+                        <b>Categoria</b>: 
+                        <span th:text="${prato.strCategory} ?: '-'" />
+                    </p>
+                    <p>
+                        <b>Área</b>:
+                        <span th:text="${prato.strArea} ?: '-'" />
+                    </p>
+                    <p>
+                        <b>Tags</b>:
+                        <span th:text="${prato.strTags} ?: '-'" />
+                    </p>
+                    <p>
+                        <b>Youtube</b>:
+                        <span th:text="${prato.strYoutube} ?: '-'" />
+                    </p>
+                    <p>
+                        <b>Fonte</b>:
+                        <span th:text="${prato.strSource} ?: '-'" />
+                    </p>
+
+                    <h5 class="text-primary">Ingredientes e Medidas</h5>
+
+                    <p th:if="${prato.strIngredient1 != null && prato.strIngredient1 != ''}">
+                        <span th:text="${prato.strIngredient1}" /> - <span th:text="${prato.strMeasure1}" />
+                    </p>
+
+                    <p th:if="${prato.strIngredient2 != null && prato.strIngredient2 != ''}">
+                        <span th:text="${prato.strIngredient2}" /> - <span th:text="${prato.strMeasure2}" />
+                    </p>
+
+                    <p th:if="${prato.strIngredient3 != null && prato.strIngredient3 != ''}">
+                        <span th:text="${prato.strIngredient3}" /> - <span th:text="${prato.strMeasure3}" />
+                    </p>
+
+                    <p th:if="${prato.strIngredient4 != null && prato.strIngredient4 != ''}">
+                        <span th:text="${prato.strIngredient4}" /> - <span th:text="${prato.strMeasure4}" />
+                    </p>
+
+                    <p th:if="${prato.strIngredient5 != null && prato.strIngredient5 != ''}">
+                        <span th:text="${prato.strIngredient5}" /> - <span th:text="${prato.strMeasure5}" />
+                    </p>
+
+                    <p th:if="${prato.strIngredient6 != null  && prato.strIngredient6 != ''}">
+                        <span th:text="${prato.strIngredient6}" /> - <span th:text="${prato.strMeasure6}" />
+                    </p>
+
+                    <p th:if="${prato.strIngredient7 != null  && prato.strIngredient7 != ''}">
+                        <span th:text="${prato.strIngredient7}" /> - <span th:text="${prato.strMeasure7}" />
+                    </p>
+
+                    <p th:if="${prato.strIngredient8 != null && prato.strIngredient8 != ''}">
+                        <span th:text="${prato.strIngredient8}" /> - <span th:text="${prato.strMeasure8}" />
+                    </p>
+
+                    <p th:if="${prato.strIngredient9 != null && prato.strIngredient9 != ''}">
+                        <span th:text="${prato.strIngredient9}" /> - <span th:text="${prato.strMeasure9}" />
+                    </p>
+
+                    <p th:if="${prato.strIngredient10 != null && prato.strIngredient10 != ''}">
+                        <span th:text="${prato.strIngredient10}" /> - <span th:text="${prato.strMeasure10}" />
+                    </p>
+
+                    <p th:if="${prato.strIngredient11 != null && prato.strIngredient11 != ''}">
+                        <span th:text="${prato.strIngredient11}" /> - <span th:text="${prato.strMeasure11}" />
+                    </p>
+                    
+                    <p th:if="${prato.strIngredient12 != null && prato.strIngredient12 != ''}">
+                        <span th:text="${prato.strIngredient12}" /> - <span th:text="${prato.strMeasure12}" />
+                    </p>
+
+                    <p th:if="${prato.strIngredient13 != null && prato.strIngredient13 != ''}">
+                        <span th:text="${prato.strIngredient13}" /> - <span th:text="${prato.strMeasure13}" />
+                    </p>
+
+                    <p th:if="${prato.strIngredient14 != null && prato.strIngredient14 != ''}">
+                        <span th:text="${prato.strIngredient14}" /> - <span th:text="${prato.strMeasure14}" />
+                    </p>
+
+                    <p th:if="${prato.strIngredient15 != null && prato.strIngredient15 != ''}">
+                        <span th:text="${prato.strIngredient15}" /> - <span th:text="${prato.strMeasure15}" />
+                    </p>
+
+                    <p th:if="${prato.strIngredient16 != null && prato.strIngredient16 != ''}">
+                        <span th:text="${prato.strIngredient16}" /> - <span th:text="${prato.strMeasure16}" />
+                    </p>
+
+                    <p th:if="${prato.strIngredient17 != null && prato.strIngredient17 != ''}">
+                        <span th:text="${prato.strIngredient17}" /> - <span th:text="${prato.strMeasure17}" />
+                    </p>
+
+                    <p th:if="${prato.strIngredient18 != null && prato.strIngredient18 != ''}">
+                        <span th:text="${prato.strIngredient18}" /> - <span th:text="${prato.strMeasure18}" />
+                    </p>
+
+                    <p th:if="${prato.strIngredient19 != null && prato.strIngredient19 != ''}">
+                        <span th:text="${prato.strIngredient19}" /> - <span th:text="${prato.strMeasure19}" />
+                    </p>
+
+                    <p th:if="${prato.strIngredient20 != null && prato.strIngredient20 != ''}">
+                        <span th:text="${prato.strIngredient20}" /> - <span th:text="${prato.strMeasure20}" />
+                    </p>
+
+                    <h5 class="text-primary">Instruções de Preparo</h5>
+
+                    <p>
+                        <span th:text="${prato.strInstructions} ?: '-'" />
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <br /><br />
+
+</div>
